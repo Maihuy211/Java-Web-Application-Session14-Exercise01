@@ -1,9 +1,18 @@
 package com.example.bai1.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @Entity
 @Table(name = "wallets")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Wallet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,35 +23,4 @@ public class Wallet {
     
     @Column(name = "user_id")
     private Long userId;
-
-    public Wallet() {}
-
-    public Wallet(Long userId, double balance) {
-        this.userId = userId;
-        this.balance = balance;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
 }
