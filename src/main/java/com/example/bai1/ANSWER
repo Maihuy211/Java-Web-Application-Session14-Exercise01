@@ -1,0 +1,4 @@
+Đơn hàng bị cập nhật sai trạng thái vì code giả lập lỗi (if (true))
+nằm sau khi cập nhật order nhưng trước khi trừ tiền.
+Transaction thiếu lệnh session.close() trong finally block
+để đảm bảo đóng session và rollback khi có lỗi.
